@@ -68,6 +68,7 @@ public class EmailCommand implements CommandExecutor {
             if(args[1].equals(args[2]) && PlayerCache.getInstance().isAuthenticated(name)) {
                 PlayerAuth auth = PlayerCache.getInstance().getAuth(name);
                 if (auth.getEmail() == null || (!auth.getEmail().equals("your@email.com") && !auth.getEmail().isEmpty())) {
+                	m._(player, "email_exists");
                 	m._(player, "usage_email_change");
                 	return true;
                 }
